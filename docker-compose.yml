@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  minio:
+    image: bitnami/minio:latest
+    ports:
+      - '49000:9000'
+      - '49001:9001'
+    volumes:
+      - ./minio_data:/data
+    environment:
+      - MINIO_ROOT_USER=cristian
+      - MINIO_ROOT_PASSWORD=test
+      - MINIO_DEFAULT_BUCKETS=loducode
